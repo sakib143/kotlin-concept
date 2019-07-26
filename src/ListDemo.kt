@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
     }
 
 
-    val listStudentTwo : List<String> =listOf<String>("Jeff","Jack","Smith")
+    val listStudentTwo : List<String> = listOf<String>("Jeff","Jack","Smith")
     for (i in listStudentTwo){
         println("List two is  ==> "+ i)
     }
@@ -43,7 +43,7 @@ fun main(args: Array<String>) {
     //Adding custom object into arraylist.
     class Student(var name:String, var address:String)
 
-    val customArray:ArrayList<Student> = arrayListOf();
+    val customArray : ArrayList<Student> = arrayListOf();
     customArray.add(Student("Sakib","Ahmedabad"))
     customArray.add(Student("Stecy","USA"))
     customArray.add(Student("Test","Ahmedabad"))
