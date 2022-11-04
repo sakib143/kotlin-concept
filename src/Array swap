@@ -1,0 +1,43 @@
+    
+    Here we have two arrays and we want to assign second array's emp id to first array.
+    Here we will use filter, map and flatmap 
+    
+    
+    val firstList = arrayListOf<EmpData>()
+        firstList.add(EmpData(1,"Sakib"))
+        firstList.add(EmpData(2,"John"))
+        firstList.add(EmpData(3,"Jeff"))
+        firstList.add(EmpData(9,"Test_1"))
+        firstList.add(EmpData(10,"Temp_1"))
+
+
+
+        val secondList = arrayListOf<EmpData>()
+        secondList.add(EmpData(4,"Sakib"))
+        secondList.add(EmpData(5,"John"))
+        secondList.add(EmpData(6,"Jeff"))
+        secondList.add(EmpData(7,"Test"))
+        secondList.add(EmpData(8,"Temp"))
+
+
+        //Here mapping second array's emp id to first array
+        firstList.forEachIndexed {
+            indes,firstModel ->
+            secondList.map {
+                    model ->
+                firstModel.empId = model.empId
+            }
+        }
+
+        //Here filter common array from two arrays
+        val output = firstList.flatMap {
+                firstArray -> secondList.filter {
+            firstArray.empName == it.empName
+            }
+        }
+
+        firstList.clear()
+        firstList.addAll(output)
+
+
+        Log.d("==>"," firstList ${firstList} ")
